@@ -1,4 +1,4 @@
-name: 'S3 File Upload'
+name: 'File Upload to S3 bucket'
 description: 'Uploads the Specified file or Directory to the Bucket S3'
 author: 'Dusyanth Maniks'
 inputs:
