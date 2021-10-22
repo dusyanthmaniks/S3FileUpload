@@ -10,38 +10,8 @@ name: Upload to S3
 
 on: [pull_request]
 
-jobs:
-  upload:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@master
-      - uses: dusyanthmaniks/S3FileUpload@v1.0.0
-        with:
-          aws_key_id: ${{ secrets.AWS_KEY_ID }}
-          aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY}}
-          aws_bucket: ${{ secrets.AWS_BUCKET }}
-          source_dir: 'dirname'
+<img width="468" alt="Screenshot 2021-10-22 at 1 19 53 PM" src="https://user-images.githubusercontent.com/40063644/138415042-836b136f-3c9a-48dd-a6fc-2c69a2d61d72.png">
 Recommend using with deployment-action in pull request.
-
-name: Preview
-on:
-  push:
-    branches: [ main ]
-jobs:
-  checkout-App-Code:
-    name: Application-Checkout
-    runs-on: ubuntu-latest
-    steps:
-      - name: Code-Checkout
-        uses: actions/checkout@v2
-      - name: S3-Upload
-        uses: dusyanthmaniks/S3FileUpload@v1.0.0
-        with:
-          aws_key_id: ${{ secrets.AWS_KEY_ID }}
-          aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY}}
-          aws_bucket: ${{ secrets.AWS_BUCKET}}
-          file_name: action.yml
-        
      
 Action inputs
 
@@ -54,4 +24,6 @@ aws_bucket	(Required) The name of the bucket you're upload to.
 file_name	(Required) The file or Directory you wish to upload to S3. 
 destination_dir	(Optional) The destination directory in S3
 If this field is excluded by Default Uploaded to the root of the S3 Bucket if mentioned Creates a New folder(if not available) and uploads the file only the final path should be mentioned excluding the file or directort for upload
+
+<img width="774" alt="Screenshot 2021-10-22 at 1 21 35 PM" src="https://user-images.githubusercontent.com/40063644/138415301-eb31a836-b645-4fe7-9fae-eb2fa106e22e.png">
 
