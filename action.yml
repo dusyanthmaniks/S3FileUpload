@@ -1,0 +1,23 @@
+name: 'S3 Upload'
+description: 'Uploads the Specified file or Directory to the Bucket S3'
+author: 'Dusyanth Maniks'
+inputs:
+  aws_key_id:
+    description: 'AWS Key'
+    required: true
+  aws_secret_access_key:
+    description: 'AWS Secret Key'
+    required: true
+  aws_bucket:
+    description: 'Name of the Bucket where the file is to be uploaded'
+    required: true
+  file_name: 
+    description: 'File which is to be uploded to the S3 Bucket'
+    required: true
+  destination_dir: 
+    description: 'Directory in S3 where the Local File is to sit on'
+    required: false
+    default: '/'
+runs: 
+  using: 'node12'
+  main: 'dist/index.js'
